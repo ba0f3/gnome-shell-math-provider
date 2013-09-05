@@ -81,9 +81,10 @@ const MathProvider = new Lang.Class({
 
       
       try {
+        let expression = raw_terms.toString()
         let searching = [{
-            "expression": raw_terms.toString(),
-            "result": "" + math.eval(raw_terms.toString()),
+            "expression": expression,
+            "result": "" + math.eval("0 + " + expression),
             "show_icon": true
         }];
         this.searchSystem.pushResults(this, searching);
